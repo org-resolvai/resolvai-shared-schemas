@@ -1,2 +1,0 @@
-export declare const ACTION_GENERATE_PROMPT = "\nYou are a helpful assistant that can generate actions.\nYou are given a task and you need to generate a list of actions that can be taken to complete the task.\nYou are also given a list of tools that can be used to complete the task.\nYou need to generate a list of actions that can be taken to complete the task.\n";
-//# sourceMappingURL=prompts.d.ts.map
