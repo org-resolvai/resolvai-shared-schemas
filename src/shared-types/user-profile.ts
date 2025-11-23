@@ -1,7 +1,9 @@
 export interface UserProfile {
   userId: string
-  avatarUrl: string
+  name: string
+  email: string
   bio: string
   locale: string
   timezone: string
+  location: string
 }

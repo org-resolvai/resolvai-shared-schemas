@@ -1,11 +1,15 @@
-export const USER_PROFILE_PROMPT = ` #Current User Information:
-- User ID: {{userId}}
-- Name: {{name}}
-- Email: {{email}}
-- Language: {{locale}}
-- Timezone: {{timezone}}    
-- Location: {{location}}
-- Time: {{time}}
+import { UserProfile } from '../shared-types/user-profile'
+
+export const USER_PROFILE_PROMPT = (
+  profile: UserProfile
+) => ` #Current User Information:
+- User ID: ${profile.userId}
+- Name: ${profile.name}
+- Email: ${profile.email}
+- Language: ${profile.locale}
+- Timezone: ${profile.timezone}    
+- Location: ${profile.location}
+- Time: ${new Date().toLocaleString()}
 `
 
 export const EXTRACT_ACTION_PROMPT = `You are a structured action extractor that outputs exactly ONE and ONLY ONE JSON object.
