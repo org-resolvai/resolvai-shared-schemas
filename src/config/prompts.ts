@@ -1,15 +1,21 @@
-import { UserProfile } from '../shared-types/user-profile'
+import { userPortrait, userProfile } from '../db-schema/user-schema'
 
 export const USER_PROFILE_PROMPT = (
-  profile: UserProfile
+  profile: typeof userProfile.$inferSelect,
+  portrait?: typeof userPortrait.$inferSelect
 ) => ` #Current User Information:
 - User ID: ${profile.userId}
-- Name: ${profile.name}
-- Email: ${profile.email}
+- Name: ${profile.metadata?.name}
+- Email: ${profile.metadata?.email}
 - Language: ${profile.locale}
 - Timezone: ${profile.timezone}    
 - Location: ${profile.location}
-- Time: ${new Date().toLocaleString()}
+- Exclude Keywords: ${profile.personalizedSettings?.excludeKeywords}
+- Labels: ${profile.personalizedSettings?.labels}
+- Tags: ${profile.personalizedSettings?.tags}
+- Topic Preferences: ${profile.personalizedSettings?.topicPreferences}
+- Current Time: ${new Date().toLocaleString()}
+${portrait?.data ? `- Statistics: ${portrait.data.metrics}` : ''}
 `
 
 export const EXTRACT_ACTION_PROMPT = `You are a structured action extractor that outputs exactly ONE and ONLY ONE JSON object.
