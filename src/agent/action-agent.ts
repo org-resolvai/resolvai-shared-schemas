@@ -24,14 +24,7 @@ export async function masterAgentCall({
   model: LanguageModel
 }) {
   //这里可以添加中间逻辑，例如：
-  //1. 根据输入内容，判断是否需要进行进一步的分析
-  //2. 如果需要进一步的分析，则调用进一步的分析方法
-  //3. 如果不需要进一步的分析，则直接返回输入内容
-  //4. 如果需要进一步的分析，则调用进一步的分析方法
-  //5. 如果不需要进一步的分析，则直接返回输入内容
-  //6. 如果需要进一步的分析，则调用进一步的分析方法
-  //7. 如果不需要进一步的分析，则直接返回输入内容
-  //8. 如果需要进一步的分析，则调用进一步的分析方法
+  //需要进一步的 generateObject 处理得到指标后，再调用 estimate 方法得到估计值
   const result = await generateObject({
     model,
     schema: ActionRecordSchema,
