@@ -1,4 +1,4 @@
-import { userPortrait, userProfile } from '../../db-schema'
+import { userPortrait, userProfile } from '../db-schema'
 
 export const USER_PROFILE_PROMPT = (
   profile: typeof userProfile.$inferSelect,
