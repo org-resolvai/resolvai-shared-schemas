@@ -10,13 +10,9 @@
       "types": "./src/index.ts",
       "default": "./src/index.ts"
     },
-    "./db-schema": {
-      "types": "./src/db-schema/index.ts",
-      "default": "./src/db-schema/index.ts"
-    },
-    "./config": {
-      "types": "./src/config/index.ts",
-      "default": "./src/config/index.ts"
+    "./agent": {
+      "types": "./src/agent/index.ts",
+      "default": "./src/agent/index.ts"
     },
     "./shared-types": {
       "types": "./src/shared-types/index.ts",
@@ -45,7 +41,9 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "drizzle-orm": "^0.44.7"
+    "drizzle-orm": "^0.44.7",
+    "googleapis": "^166.0.0",
+    "ai": "^5.0.93"
   },
   "devDependencies": {
     "@types/node": "^22.19.1",

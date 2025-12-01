@@ -9,3 +9,5 @@ export const ActionRecordSchema = z.object({
   labels: z.array(z.string()),
   importanceRating: z.number().min(0).max(100)
 })
+
+export type ActionRecord = z.infer<typeof ActionRecordSchema>

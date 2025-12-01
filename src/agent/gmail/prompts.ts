@@ -1,4 +1,4 @@
-import { userPortrait, userProfile } from '../db-schema/user-schema'
+import { userPortrait, userProfile } from '../../db-schema'
 
 export const USER_PROFILE_PROMPT = (
   profile: typeof userProfile.$inferSelect,
@@ -16,6 +16,13 @@ export const USER_PROFILE_PROMPT = (
 - Topic Preferences: ${profile.personalizedSettings?.topicPreferences}
 - Current Time: ${new Date().toLocaleString()}
 ${portrait?.data ? `- Statistics: ${portrait.data.metrics}` : ''}
+`
+
+export const INPUT_PROMPT = (input: string) => `
+#Analyze the following text and produce ONE structured action.
+  <content>
+    ${input}
+  </content>
 `
 
 export const EXTRACT_ACTION_PROMPT = (
